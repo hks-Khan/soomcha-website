@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <!-- 외부 리소스를 전혀 불러오지 않는다: 주소의 로그인 정보가 이 페이지 밖으로 나가지 않게 한다 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>숨차수영 · 가입 확인</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, sans-serif; color-scheme: light dark; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; }
+    main { box-sizing: border-box; width: min(100%, 32rem); padding: 2rem; }
+    h1 { margin: 0 0 1rem; font-size: clamp(1.6rem, 6vw, 2.2rem); letter-spacing: -.02em; }
+    p { margin: 0 0 1.5rem; line-height: 1.7; }
+    a.button {
+      display: block; padding: 1rem; border-radius: 999px; text-align: center;
+      font-weight: 600; text-decoration: none; background: #0f172a; color: #fff;
+    }
+    @media (prefers-color-scheme: dark) { a.button { background: #f8fafc; color: #0f172a; } }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="state-mobile" hidden>
+      <h1>가입 확인이 끝났어요</h1>
+      <p>숨차수영 앱으로 이동하고 있어요. 앱이 열리지 않으면 아래 버튼을 눌러 주세요.</p>
+      <a class="button" id="open-app" href="#">숨차수영 앱 열기</a>
+    </section>
+    <section id="state-desktop" hidden>
+      <h1>가입 확인이 끝났어요</h1>
+      <p>휴대폰에서 숨차수영 앱을 열고 가입한 이메일로 로그인해 주세요.</p>
+    </section>
+    <section id="state-invalid" hidden>
+      <h1>링크가 만료됐거나 이미 사용됐어요</h1>
+      <p>앱에서 로그인해 보고, 안 되면 다시 가입해 주세요.</p>
+    </section>
+    <noscript>
+      <p>링크가 만료됐거나 이미 사용됐어요. 앱에서 로그인해 보고, 안 되면 다시 가입해 주세요.</p>
+    </noscript>
+  </main>
+  <script>
+    (function () {
+      var APP_CALLBACK = 'aquach://auth/callback';
+      var hash = window.location.hash || '';
+      var params = new URLSearchParams(hash.replace(/^#/, ''));
+      var query = new URLSearchParams(window.location.search);
+      var hasError = params.has('error') || params.has('error_code') ||
+        query.has('error') || query.has('error_code');
+      var hasTokens = params.has('access_token') && params.has('refresh_token');
+
+      // 로그인 정보가 브라우저 방문 기록에 남지 않게 주소창에서 지운다
+      if (hash && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+
+      function show(id) { document.getElementById(id).hidden = false; }
+
+      if (hasError || !hasTokens) {
+        show('state-invalid');
+        return;
+      }
+
+      var ua = navigator.userAgent || '';
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+      if (!isMobile) {
+        show('state-desktop');
+        return;
+      }
+
+      var appUrl = APP_CALLBACK + hash;
+      var button = document.getElementById('open-app');
+      button.href = appUrl;
+      show('state-mobile');
+      window.location.href = appUrl;
+    })();
+  </script>
+</body>
+</html>
