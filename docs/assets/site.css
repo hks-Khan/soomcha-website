@@ -211,7 +211,7 @@ a { color: inherit; text-decoration: none; }
 /* app showcase */
 .showcase { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--r-card); padding: 20px; margin-bottom: 20px; }
 .showcase-copy { padding: 24px 20px 20px; display: flex; flex-direction: column; }
-.showcase-copy .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.showcase-copy .top { display: flex; align-items: center; gap: 16px; }
 .showcase-copy .label { margin-top: 36px; }
 .app-name { margin: 12px 0 0; font-size: clamp(44px, 5vw, 72px); font-weight: 900; line-height: 1; letter-spacing: -.06em; word-spacing: .08em; }
 .app-lead { margin: 20px 0 0; font-size: 21px; font-weight: 700; line-height: 1.45; letter-spacing: -.03em; word-spacing: .05em; }
@@ -259,9 +259,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ───────── principles ───────── */
 .principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-.principle { background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--r-card); padding: 32px; min-height: 280px; display: flex; flex-direction: column; }
+.principle { background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--r-card); padding: 32px; min-height: 0; display: flex; flex-direction: column; }
 .principle .n { font-family: var(--display); font-weight: 900; font-size: 56px; line-height: 1; color: var(--red); letter-spacing: -.03em; }
-.principle h3 { margin: auto 0 0; padding-top: 40px; font-size: 24px; font-weight: 800; letter-spacing: -.04em; word-spacing: .06em; line-height: 1.25; }
+.principle h3 { margin: 0; padding-top: 56px; font-size: 24px; font-weight: 800; letter-spacing: -.04em; word-spacing: .06em; line-height: 1.25; }
 .principle p { margin: 10px 0 0; color: var(--text-2); font-size: 15px; line-height: 1.65; }
 
 /* ───────── app page hero ───────── */
@@ -474,6 +474,7 @@ button:disabled { opacity: .6; cursor: wait; }
 .launch-note { margin: 0; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; line-height: 1.6; color: var(--text-2); }
 .launch-note .label { display: block; margin-bottom: 6px; }
 .launch-note a { color: var(--text); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.showcase-copy .launch-note { margin-top: 24px; }
 .signup-secondary { display: inline-block; margin-top: 18px; font-size: 14px; color: var(--text-2); text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 1080px) {
   .soomcha-showcase, .soomcha-intro { grid-template-areas: "copy" "media" "signup"; }
