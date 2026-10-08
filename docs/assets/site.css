@@ -24,8 +24,8 @@
   --header-bg: rgba(11, 11, 12, .78);
   --track: rgba(255, 255, 255, .08);
   --art: rgba(255, 255, 255, .22);
-  --stage: #000;
-  --stage-glow: rgba(230, 0, 18, .35);
+  --stage: transparent;
+  --stage-glow: transparent;
   --stage-ink: var(--text-3);
   --glow: rgba(230, 0, 18, .28);
   color-scheme: dark;
@@ -41,7 +41,7 @@
     --header-bg: rgba(255, 255, 255, .84);
     --track: rgba(11, 11, 12, .08);
     --art: rgba(11, 11, 12, .28);
-    --stage: var(--red); --stage-glow: transparent; --stage-ink: rgba(255, 255, 255, .85);
+    --stage: transparent; --stage-glow: transparent; --stage-ink: rgba(255, 255, 255, .85);
     --glow: rgba(230, 0, 18, .1);
     color-scheme: light;
   }
@@ -54,7 +54,7 @@
   --header-bg: rgba(255, 255, 255, .84);
   --track: rgba(11, 11, 12, .08);
   --art: rgba(11, 11, 12, .28);
-  --stage: var(--red); --stage-glow: transparent; --stage-ink: rgba(255, 255, 255, .85);
+  --stage: transparent; --stage-glow: transparent; --stage-ink: rgba(255, 255, 255, .85);
   --glow: rgba(230, 0, 18, .1);
   color-scheme: light;
 }
@@ -221,7 +221,7 @@ a { color: inherit; text-decoration: none; }
 .checks li::before { content: ""; width: 18px; height: 18px; margin-top: 2px; border-radius: 50%; background: var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.2l2.6 2.6L13 6.4' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat; }
 .showcase-copy .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 36px; }
 .stage { position: relative; border-radius: 20px; background: var(--stage); min-height: 560px; display: grid; place-items: center; padding: 40px 24px; overflow: hidden; isolation: isolate; }
-.stage::before { content: ""; position: absolute; z-index: -1; inset: auto -20% -40% -20%; height: 80%; background: radial-gradient(closest-side, var(--stage-glow), transparent); }
+.stage::before { display: none; }
 
 /* ───────── workout card (Soomcha Swim data) ───────── */
 .wcard { width: min(100%, 380px); background: #fff; color: #0f172a; border-radius: 26px; padding: 22px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.9); transform: rotate(-2deg); }
@@ -434,3 +434,72 @@ a { color: inherit; text-decoration: none; }
   .enter, .line > span, .js .rv { opacity: 1; transform: none; }
   .marquee-track { animation: none; }
 }
+
+/* Product media and launch waitlist */
+#apps, #waitlist, #swim-name, #soomcha-name { scroll-margin-top: 90px; }
+.product-screen { width: min(100%, 290px); height: auto; }
+.stage-video { display: flex; align-items: center; justify-content: center; padding-block: 28px; background: transparent; }
+.stage-video::before { display: none; }
+.promo-media { position: relative; width: min(100%, 304px); margin: 0 auto; }
+.promo-media video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 18px; background: #080808; }
+.waitlist-form { min-width: 0; }
+.waitlist-form > label { display: block; font-size: 14px; font-weight: 600; }
+.waitlist-fields { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.waitlist-fields input { width: 100%; min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--text); font: inherit; }
+.waitlist-fields .btn { width: 100%; justify-content: center; cursor: pointer; font: inherit; font-weight: 700; }
+.waitlist-form .waitlist-consent { display: flex; gap: 10px; margin-top: 18px; align-items: start; font-size: 12px; font-weight: 400; color: var(--text-2); }
+.waitlist-consent input { flex-shrink: 0; margin: 4px 0 0; accent-color: var(--red); }
+.waitlist-consent a { text-decoration: underline; text-underline-offset: 3px; }
+.form-status { min-height: 24px; font-size: 14px; }
+.form-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+button:disabled { opacity: .6; cursor: wait; }
+
+.video-toggle { position: absolute; right: 14px; bottom: 14px; display: grid; place-items: center; width: 40px; height: 40px; padding: 10px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; color: #fff; background: rgba(0,0,0,.55); backdrop-filter: blur(8px); cursor: pointer; }
+.video-toggle[hidden] { display: none; }
+.video-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.video-toggle .video-play, .video-toggle.is-paused .video-pause { display: none; }
+.video-toggle.is-paused .video-play { display: block; }
+
+/* Keep signup with the product; mobile follows copy, video, signup. */
+.soomcha-showcase, .soomcha-intro { grid-template-areas: "copy media" "signup media"; row-gap: 24px; }
+.soomcha-showcase .showcase-copy, .soomcha-intro-copy { grid-area: copy; }
+.soomcha-showcase .stage-video, .soomcha-intro .stage-video { grid-area: media; }
+.signup-block { grid-area: signup; min-width: 0; width: 100%; max-width: 540px; }
+.soomcha-showcase .signup-block { padding: 0 20px 24px; }
+.soomcha-showcase .showcase-copy { padding-bottom: 0; }
+.signup-block .waitlist-fields { flex-wrap: nowrap; }
+.signup-block .waitlist-fields input { flex: 1; width: 0; }
+.signup-block .waitlist-fields .btn { border: 0; flex: 0 0 auto; width: auto; padding-inline: 20px; font-size: 14px; }
+.signup-block .form-status:empty { display: none; }
+.signup-secondary { display: inline-block; margin-top: 18px; font-size: 14px; color: var(--text-2); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 1080px) {
+  .soomcha-showcase, .soomcha-intro { grid-template-areas: "copy" "media" "signup"; }
+  .signup-block { max-width: 640px; }
+}
+@media (max-width: 720px) {
+  .soomcha-showcase .signup-block { padding: 0 10px 16px; }
+  .signup-block .waitlist-fields { flex-wrap: wrap; }
+  .signup-block .waitlist-fields input { flex: auto; width: 100%; }
+  .signup-block .waitlist-fields .btn { width: 100%; }
+}
+
+.site-header .theme-toggle { margin-left: auto; }
+
+/* Aquach uses the same copy/media proportions as the adjacent product. */
+.aquach-showcase .showcase-copy { display: flex; }
+.aquach-deck { position: relative; width: 100%; max-width: 560px; aspect-ratio: 1 / 1.13; align-self: center; justify-self: center; isolation: isolate; overflow: hidden; touch-action: pan-y; cursor: grab; }
+.aquach-deck:active { cursor: grabbing; }
+.deck-card { position: absolute; top: 50%; left: 50%; width: 44%; opacity: 1; visibility: hidden; transform: translate(-50%, -50%) scale(.84); pointer-events: none; transition: transform .65s cubic-bezier(.22,1,.36,1); will-change: transform; }
+.deck-card img { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; }
+.deck-card[data-position="0"] { z-index: 3; visibility: visible; transform: translate(-50%, -50%); pointer-events: auto; }
+.deck-card[data-position="-1"] { z-index: 2; visibility: visible; transform: translate(-94%, -46%) rotate(-4deg) scale(.86); pointer-events: auto; }
+.deck-card[data-position="1"] { z-index: 2; visibility: visible; transform: translate(-6%, -46%) rotate(4deg) scale(.86); pointer-events: auto; }
+.deck-card[data-position="-2"], .deck-card[data-position="-3"] { transform: translate(-116%, -46%) rotate(-4deg) scale(.86); }
+.deck-card[data-position="2"], .deck-card[data-position="3"] { transform: translate(16%, -46%) rotate(4deg) scale(.86); }
+@media (max-width: 720px) {
+ .aquach-deck { max-width: 430px; aspect-ratio: 1 / 1.3; }
+ .deck-card { width: 58%; }
+ .deck-card[data-position="-1"] { transform: translate(-81%, -46%) rotate(-4deg) scale(.84); }
+ .deck-card[data-position="1"] { transform: translate(-19%, -46%) rotate(4deg) scale(.84); }
+}
+@media (prefers-reduced-motion: reduce) { .deck-card { transition: none; } }
