@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soomcha — Your active calories run the simulation</title>
+  <meta name="description" content="Soomcha is an iOS activity-calorie simulation: active energy from Apple Health becomes growth for the residents of your town.">
+  <meta property="og:title" content="Soomcha — Your active calories run the simulation">
+  <meta property="og:description" content="Soomcha is an iOS activity-calorie simulation: active energy from Apple Health becomes growth for the residents of your town.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://soomcha.com/apps/soomcha/">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script>try{if(sessionStorage.getItem('soomcha-opened'))document.documentElement.classList.add('seen')}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Roboto+Slab:wght@700;900&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="opening" aria-hidden="true">
+  <div class="opening-stage">
+    <div class="opening-mark">SOOMCHA<b>.</b></div>
+    <div class="runner"><span class="runner-sprite"></span><i class="sweat s1"></i><i class="sweat s2"></i><i class="sweat s3"></i><span class="huff">HUFF · HUFF</span></div>
+  </div>
+  <div class="opening-cap">Fitness apps / Loading</div>
+  <div class="opening-bar"><i></i></div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Soomcha home">SOOMCHA<b>.</b></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/apps/swim/"><span class="full">Soomcha </span>Swim</a>
+      <a href="/apps/soomcha/" aria-current="page">Soomcha</a>
+      <a class="opt" href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Devlog</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <a class="crumb mono enter" href="/">← Soomcha</a>
+      <div class="page-grid">
+        <div>
+          <img class="app-icon enter" style="--d:.05s" src="/assets/img/icon-soomcha.png" alt="Soomcha app icon" width="80" height="80">
+          <h1 class="page-title"><span class="line" style="--d:.1s"><span>Soomcha<span class="stop">.</span></span></span></h1>
+          <div class="page-pills enter" style="--d:.3s"><span class="pill pill-line"><span class="dot"></span>In development</span><span class="pill pill-line">iPhone</span><span class="pill pill-line">Apple Health</span></div>
+          <p class="page-lead enter" style="--d:.38s">Your active calories <em>run the simulation.</em></p>
+          <p class="page-desc enter" style="--d:.46s">Soomcha is an activity-calorie simulation. The active energy you burn — tracked by Apple Health — becomes growth energy for the residents of your town. You choose where they train; every evening the results come in.</p>
+          <div class="page-actions enter" style="--d:.54s">
+            <a class="btn btn-red" href="#how">How it works <span class="arr" aria-hidden="true">↓</span></a>
+            <a class="btn btn-line" href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Follow the devlog <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="stage enter" style="--d:.3s">
+          <div class="hud" role="img" aria-label="Example Soomcha day: 420 kilocalories of active energy from Apple Health become 42 XP for each resident, who train at the sea until results at 21:00.">
+            <div class="hud-card">
+              <div class="hud-row"><span class="label">Today · Apple Health</span><span class="mono muted">Example</span></div>
+              <div class="big" style="margin-top:14px">420<small>kcal</small></div>
+              <div class="mono muted" style="margin-top:6px">Active energy</div>
+              <div class="meter"><i style="--w:70%"></i></div>
+            </div>
+            <div class="hud-arrow mono">÷ 10 → growth energy</div>
+            <div class="hud-grid">
+              <div class="hud-card"><span class="mono muted">Each resident</span><b class="red">+42 XP</b></div>
+              <div class="hud-card"><span class="mono muted">Today’s place</span><b>Sea</b></div>
+              <div class="hud-card"><span class="mono muted">Training</span><b>Swim · Surf</b></div>
+              <div class="hud-card"><span class="mono muted">Results</span><b>21:00</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="head"><div><p class="label rv">01 / How it works</p><h2 class="rv" id="how-title">You move.<br>They train.</h2></div><p class="rv" style="--d:.1s">One day in Soomcha, from your first step to the evening results.</p></div>
+      <div class="steps" style="--n:4">
+        <div class="step rv"><div class="k"><b class="red">01</b><span class="mono muted">Move</span></div><h3>Burn active calories</h3><p>Walk, run, swim, lift — Apple Health counts the active energy you burn.</p><div class="tags"><span class="tag">Apple Health</span></div></div>
+        <div class="step rv" style="--d:.06s"><div class="k"><b>02</b><span class="mono muted">Convert</span></div><h3>Energy becomes XP</h3><p>Every 10 kcal gives each resident 1 discipline XP and 1 body-stat XP. It isn’t split between them.</p><div class="tags"><span class="tag">10 kcal = 1 XP</span></div></div>
+        <div class="step rv" style="--d:.12s"><div class="k"><b>03</b><span class="mono muted">Train</span></div><h3>Pick today’s place</h3><p>Choose a place the night before. At 09:00 everyone heads out and trains in their own way.</p><div class="tags"><span class="tag">09:00 – 21:00</span></div></div>
+        <div class="step rv" style="--d:.18s"><div class="k"><b>04</b><span class="mono muted">Results</span></div><h3>See who got stronger</h3><p>At 21:00 growth settles once. Check the results, then pick tomorrow’s place.</p><div class="tags"><span class="tag">21:00</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="places-title">
+    <div class="wrap">
+      <div class="head"><div><p class="label rv">02 / Places</p><h2 class="rv" id="places-title">One place a day.<br>Everyone goes.</h2></div><p class="rv" style="--d:.1s">Each place trains different disciplines. Running carries over between mountain and field.</p></div>
+      <div class="places"><div class="place rv"><h3>Mountain</h3><svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 118 L80 50 L120 80 L190 14 L250 76 L300 46 L400 118"/><path d="M174 30 L190 14 L206 32" class="red"/></svg><div class="tags"><span class="tag">Boulder rolling</span><span class="tag">Hanging</span><span class="tag">Running</span></div></div><div class="place rv"><h3>Sea</h3><svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 Q25 26 50 40 T100 40 T150 40 T200 40 T250 40 T300 40 T350 40 T400 40" class="red"/><path d="M0 72 Q25 58 50 72 T100 72 T150 72 T200 72 T250 72 T300 72 T350 72 T400 72"/><path d="M0 104 Q25 90 50 104 T100 104 T150 104 T200 104 T250 104 T300 104 T350 104 T400 104"/></svg><div class="tags"><span class="tag">Swimming</span><span class="tag">Surfing</span><span class="tag">Freediving</span></div></div><div class="place rv"><h3>Field</h3><svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C80 30 160 30 230 56 S340 86 400 50"/><path d="M0 112 C100 84 220 94 400 80" class="red"/><path d="M80 118 L130 80 M200 118 L230 76 M320 118 L330 74"/></svg><div class="tags"><span class="tag">Running</span><span class="tag">Cycling</span><span class="tag">Yoga</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="grow-title">
+    <div class="wrap">
+      <div class="head"><div><p class="label rv">03 / Growth</p><h2 class="rv" id="grow-title">Same place.<br>Different results.</h2></div><p class="rv" style="--d:.1s">16 personalities, lasting preferences and a little luck decide how each resident trains.</p></div>
+      <div class="grow">
+        <div class="grow-card rv">
+          <p class="label">Body stats</p>
+          <h3>Four stats every resident builds</h3>
+          <div class="stats">
+            <div class="stat"><div class="row"><b>Strength</b><span>Big, heavy effort</span></div><div class="meter"><i style="--w:72%"></i></div></div>
+            <div class="stat"><div class="row"><b>Endurance</b><span>Keeping it going</span></div><div class="meter"><i style="--w:88%"></i></div></div>
+            <div class="stat"><div class="row"><b>Power</b><span>Quick bursts, fast reactions</span></div><div class="meter"><i style="--w:46%"></i></div></div>
+            <div class="stat"><div class="row"><b>Flexibility</b><span>Range of movement</span></div><div class="meter"><i style="--w:60%"></i></div></div>
+          </div>
+          <p class="note">Example values. Stats are in-game growth, not a measure of your own fitness.</p>
+        </div>
+        <div class="grow-card rv" style="--d:.08s">
+          <p class="label">Disciplines</p>
+          <h3>Eight to master — or go all-round</h3>
+          <div class="tags" style="margin-top:22px"><span class="tag">Boulder rolling</span><span class="tag">Hanging</span><span class="tag">Running</span><span class="tag">Swimming</span><span class="tag">Surfing</span><span class="tag">Freediving</span><span class="tag">Cycling</span><span class="tag">Yoga</span></div>
+          <div class="formula">
+            <div><b>10 kcal</b><span>→ 1 XP per resident</span></div>
+            <div><b>30 XP</b><span>→ Lv. 1 to Lv. 2</span></div>
+            <div><b>+10 XP</b><span>→ more for every level after</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta rv">
+      <div><p class="label">Status</p><h2>Still in the gym.</h2><p>Soomcha is in development for iPhone. Follow along as the daily loop comes together.</p></div>
+      <a class="btn btn-white" href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Read the devlog <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="label rv">Get in touch</p>
+        <h2 class="rv" style="--d:.1s">Questions, bugs, ideas&nbsp;—<br>we read every one.</h2>
+      </div>
+      <div class="foot-links rv" style="--d:.2s">
+        <a href="mailto:hks8680@gmail.com">hks8680@gmail.com</a>
+        <a href="/apps/swim/">Soomcha Swim</a>
+        <a href="/apps/soomcha/">Soomcha</a>
+        <a href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Devlog</a>
+      </div>
+    </div>
+    <p class="foot-word" aria-hidden="true"><span>S</span><span>O</span><span>O</span><span>M</span><span>C</span><span>H</span><span>A</span><span class="stop">.</span></p>
+    <div class="foot-bottom mono"><span>© 2026 Soomcha</span><span>Made between sets</span></div>
+  </div>
+</footer>
+</body>
+</html>

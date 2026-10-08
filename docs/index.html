@@ -1,25 +1,194 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="referrer" content="no-referrer">
-  <title>Soomcha · 웹사이트 준비 중</title>
-  <style>
-    :root { font-family: system-ui, -apple-system, sans-serif; color-scheme: light dark; }
-    body { margin: 0; min-height: 100svh; display: grid; place-items: center; }
-    main { box-sizing: border-box; width: min(100%, 42rem); padding: 2rem; }
-    h1 { margin: 0 0 1.5rem; font-size: clamp(2.5rem, 8vw, 4rem); letter-spacing: -.04em; }
-    p { line-height: 1.7; }
-    small { display: block; margin-top: 2rem; line-height: 1.6; }
-  </style>
+  <title>Soomcha — Fitness apps</title>
+  <meta name="description" content="Soomcha is Korean for “out of breath.” We build fitness apps that start from what your body actually did: Soomcha Swim and Soomcha.">
+  <meta property="og:title" content="Soomcha — Fitness apps">
+  <meta property="og:description" content="Soomcha is Korean for “out of breath.” We build fitness apps that start from what your body actually did: Soomcha Swim and Soomcha.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://soomcha.com/">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script>try{if(sessionStorage.getItem('soomcha-opened'))document.documentElement.classList.add('seen')}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Roboto+Slab:wght@700;900&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
 </head>
 <body>
-  <main>
-    <h1>Soomcha</h1>
-    <p>웹사이트를 준비하고 있습니다.</p>
-    <small>연결 확인을 위한 임시 페이지입니다.</small>
-  </main>
+<a class="skip" href="#main">Skip to content</a>
+<div class="opening" aria-hidden="true">
+  <div class="opening-stage">
+    <div class="opening-mark">SOOMCHA<b>.</b></div>
+    <div class="runner"><span class="runner-sprite"></span><i class="sweat s1"></i><i class="sweat s2"></i><i class="sweat s3"></i><span class="huff">HUFF · HUFF</span></div>
+  </div>
+  <div class="opening-cap">Fitness apps / Loading</div>
+  <div class="opening-bar"><i></i></div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Soomcha home">SOOMCHA<b>.</b></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/apps/swim/"><span class="full">Soomcha </span>Swim</a>
+      <a href="/apps/soomcha/">Soomcha</a>
+      <a class="opt" href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Devlog</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="label enter">Soomcha — Fitness apps</span>
+        <span class="mono muted enter" style="--d:.1s">iOS · Apple Watch · Apple Health</span>
+      </div>
+      <div class="hero-grid">
+        <h1 class="hero-title" id="hero-title" aria-label="Soomcha">
+          <span class="line" style="--d:.05s"><span>Soom</span></span>
+          <span class="line" style="--d:.18s"><span>Cha<span class="stop">.</span></span></span>
+        </h1>
+        <div class="hero-side">
+          <p class="hero-statement enter" style="--d:.35s">Fitness apps for the days you train until you’re <em>out of breath.</em></p>
+          <p class="hero-desc enter" style="--d:.45s"><strong>Soomcha</strong> (숨차) is Korean for “out of breath.” We build training apps that start from what your body actually did — meters swum, calories burned — and turn it into your next session.</p>
+          <div class="hero-actions enter" style="--d:.55s">
+            <a class="btn btn-red" href="/apps/swim/">Soomcha Swim <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn-line" href="/apps/soomcha/">Soomcha <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="strip enter" style="--d:.7s">
+        <div><div class="v">2–3<small>× / week</small></div><div class="k">Swim sessions planned for you</div></div>
+        <div><div class="v">4<small>parts</small></div><div class="k">Warm-up, drill, main set, cool-down</div></div>
+        <div><div class="v">1–10<small>RPE</small></div><div class="k">Effort logged after every swim</div></div>
+        <div><div class="v">10<small>kcal</small></div><div class="k">Active energy = 1 XP in Soomcha</div></div>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Swim</span><span>Train</span><span>Record</span><span>Recover</span><span>Repeat</span>
+        <span>Swim</span><span>Train</span><span>Record</span><span>Recover</span><span>Repeat</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apps" aria-labelledby="apps-title">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label rv">01 / Apps</p><h2 class="rv" id="apps-title">Two ways to<br>train with us.</h2></div>
+        <p class="rv" style="--d:.1s">One plans your swims week by week. One turns your everyday calories into a town that trains with you.</p>
+      </div>
+
+      <article class="showcase rv" aria-labelledby="swim-name">
+        <div class="showcase-copy">
+          <div class="top">
+            <img class="app-icon" src="/assets/img/icon-swim.png" alt="Soomcha Swim app icon" width="80" height="80">
+            <span class="pill pill-red"><span class="dot"></span>On the App Store</span>
+          </div>
+          <p class="label">Swim training · iPhone + Apple Watch</p>
+          <h3 class="app-name" id="swim-name">Soomcha Swim</h3>
+          <p class="app-lead">A swim coach in your pocket — <em>weeks</em> of training, not one-off workouts.</p>
+          <ul class="checks">
+            <li>Pick a goal: breathing, body position, efficiency, kick or pace</li>
+            <li>Get a multi-week program for 2–3 swims a week</li>
+            <li>Swim from iPhone or Apple Watch; log distance, time and RPE</li>
+            <li>Ask the AI coach about today’s session</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-red" href="/apps/swim/">Explore <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn-line" href="https://apps.apple.com/kr/app/id6745004612" target="_blank" rel="noopener">App Store <span class="arr ne" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="wcard" role="img" aria-label="Example Soomcha Swim session: Slow exhale in the water, 600 metres, 21 to 28 minutes, easy. Warm-up 2 by 50 metres easy freestyle, drill 4 by 25 metres side kick, main set 6 by 50 metres freestyle, cool-down 2 by 50 metres easy freestyle.">
+            <div class="w-top"><span class="w-title">Slow exhale in the water</span><span class="w-date">WEEK 1</span></div>
+            <div class="w-stats"><div><b>600m</b><span>Distance</span></div><div><b>21–28</b><span>Minutes</span></div><div><b>Easy</b><span>Intensity</span></div></div>
+            <ol>
+              <li style="--c:#10b981"><i></i><span><small>Warm-up</small><b>Easy freestyle</b></span><em>50m × 2</em></li>
+              <li style="--c:#f59e0b"><i></i><span><small>Drill</small><b>Side kick</b></span><em>25m × 4</em></li>
+              <li style="--c:#2563eb"><i></i><span><small>Main</small><b>Freestyle</b></span><em>50m × 6</em></li>
+              <li style="--c:#94a3b8"><i></i><span><small>Cool-down</small><b>Easy freestyle</b></span><em>50m × 2</em></li>
+            </ol>
+            <div class="w-cta">Log workout</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="showcase rv" aria-labelledby="soomcha-name">
+        <div class="showcase-copy">
+          <div class="top">
+            <img class="app-icon" src="/assets/img/icon-soomcha.png" alt="Soomcha app icon" width="80" height="80">
+            <span class="pill pill-line">In development</span>
+          </div>
+          <p class="label">Activity-calorie simulation · iPhone</p>
+          <h3 class="app-name" id="soomcha-name">Soomcha</h3>
+          <p class="app-lead">Your active calories <em>run the simulation.</em></p>
+          <ul class="checks">
+            <li>Reads active energy from Apple Health — real movement only</li>
+            <li>Every 10 kcal becomes 1 XP for each resident of your town</li>
+            <li>Send everyone to the mountain, sea or field for the day</li>
+            <li>At 9 PM, see who got stronger across 4 stats and 8 disciplines</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-red" href="/apps/soomcha/">Explore <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="hud" role="img" aria-label="Example Soomcha day: 420 kilocalories of active energy from Apple Health become 42 XP for each resident, who train at the sea until results at 21:00.">
+            <div class="hud-card">
+              <div class="hud-row"><span class="label">Today · Apple Health</span><span class="mono muted">Example</span></div>
+              <div class="big" style="margin-top:14px">420<small>kcal</small></div>
+              <div class="mono muted" style="margin-top:6px">Active energy</div>
+              <div class="meter"><i style="--w:70%"></i></div>
+            </div>
+            <div class="hud-arrow mono">÷ 10 → growth energy</div>
+            <div class="hud-grid">
+              <div class="hud-card"><span class="mono muted">Each resident</span><b class="red">+42 XP</b></div>
+              <div class="hud-card"><span class="mono muted">Today’s place</span><b>Sea</b></div>
+              <div class="hud-card"><span class="mono muted">Training</span><b>Swim · Surf</b></div>
+              <div class="hud-card"><span class="mono muted">Results</span><b>21:00</b></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="build-title">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="label rv">02 / How we build</p><h2 class="rv" id="build-title">Built on<br>real effort.</h2></div>
+      </div>
+      <div class="principles">
+        <div class="principle rv"><span class="n">01</span><h3>Real movement in.</h3><p>Meters you swam, calories you burned. Our apps start from what your body actually did, not from guesses about it.</p></div>
+        <div class="principle rv" style="--d:.08s"><span class="n">02</span><h3>Reviewed, not made up.</h3><p>Training plans come from templates reviewed before release. AI adds guidance on top — it never invents the workout.</p></div>
+        <div class="principle rv" style="--d:.16s"><span class="n">03</span><h3>Today feeds tomorrow.</h3><p>Every log shapes what comes next, so effort adds up over weeks instead of disappearing after one day.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="label rv">Get in touch</p>
+        <h2 class="rv" style="--d:.1s">Questions, bugs, ideas&nbsp;—<br>we read every one.</h2>
+      </div>
+      <div class="foot-links rv" style="--d:.2s">
+        <a href="mailto:hks8680@gmail.com">hks8680@gmail.com</a>
+        <a href="/apps/swim/">Soomcha Swim</a>
+        <a href="/apps/soomcha/">Soomcha</a>
+        <a href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Devlog</a>
+      </div>
+    </div>
+    <p class="foot-word" aria-hidden="true"><span>S</span><span>O</span><span>O</span><span>M</span><span>C</span><span>H</span><span>A</span><span class="stop">.</span></p>
+    <div class="foot-bottom mono"><span>© 2026 Soomcha</span><span>Made between sets</span></div>
+  </div>
+</footer>
 </body>
 </html>
