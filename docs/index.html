@@ -9,9 +9,10 @@
   <meta property="og:description" content="Soomcha is Korean for “out of breath.” We build fitness apps that start from what your body actually did: Soomcha Swim and Soomcha.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://soomcha.com/">
-  <meta name="theme-color" content="#0b0b0c">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <script>try{if(sessionStorage.getItem('soomcha-opened'))document.documentElement.classList.add('seen')}catch(e){}</script>
+  <script>try{var d=document.documentElement,t=localStorage.getItem('soomcha-theme');if(t)d.dataset.theme=t;if(sessionStorage.getItem('soomcha-opened'))d.classList.add('seen')}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Roboto+Slab:wght@700;900&display=swap">
@@ -37,6 +38,10 @@
       <a href="/apps/soomcha/">Soomcha</a>
       <a class="opt" href="/devlog-a22e6be2-a425-4053-95ba-a106a9fc876f/">Devlog</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
   </div>
 </header>
 

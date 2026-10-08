@@ -11,6 +11,23 @@
     opening.addEventListener('click', () => opening.classList.add('skip'), { once: true });
   }
 
+  // colour theme: follow the OS until the visitor picks one, then remember it
+  const light = matchMedia('(prefers-color-scheme: light)');
+  const toggle = document.querySelector('.theme-toggle');
+  const current = () => root.dataset.theme || (light.matches ? 'light' : 'dark');
+  const paint = () => {
+    const now = current();
+    root.dataset.themeNow = now;
+    if (toggle) toggle.setAttribute('aria-label', now === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+  paint();
+  light.addEventListener('change', paint);
+  if (toggle) toggle.addEventListener('click', () => {
+    root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('soomcha-theme', root.dataset.theme); } catch (e) { /* not remembered */ }
+    paint();
+  });
+
   const io = new IntersectionObserver((entries) => {
     for (const en of entries) if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
